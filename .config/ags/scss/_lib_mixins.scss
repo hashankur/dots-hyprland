@@ -30,12 +30,12 @@ $rounding_large: 1.705rem;
 
 @mixin titlefont {
     // Geometric sans-serif
-    font-family: "Gabarito", "Poppins", "Lexend", sans-serif;
+    font-family: "Iosevka", "Gabarito", "Poppins", "Lexend", sans-serif;
 }
 
 @mixin mainfont {
     // Other clean sans-serif
-    font-family: "Rubik", "Geist", "AR One Sans", "Reddit Sans", "Inter",
+    font-family: "Iosevka", "Rubik", " Geist", " AR One Sans", " Reddit Sans", " Inter",
         "Roboto", "Ubuntu", "Noto Sans", sans-serif;
     // font-weight: 500;
 }
@@ -165,15 +165,19 @@ $elevation_margin: 0.476rem;
 @mixin element_decel {
     transition: 300ms cubic-bezier(0, 0.55, 0.45, 1);
 }
+
 @mixin element_bounceOut {
     transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
 @mixin element_accel {
     transition: 300ms cubic-bezier(0.55, 0, 1, 0.45);
 }
+
 @mixin element_easeInOut {
     transition: 300ms cubic-bezier(0.85, 0, 0.15, 1);
 }
+
 @mixin page_move {
     transition: 500ms cubic-bezier(0.85, 0, 0.15, 1);
 }
