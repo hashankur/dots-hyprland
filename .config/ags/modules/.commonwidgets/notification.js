@@ -142,6 +142,7 @@ export default ({
     });
 
     const display = Gdk.Display.get_default();
+    let body = notifObject.body.replace(/<a[^>]*>(.*?)<\/a>/g, '').trim(); // Remove <a> tags
     const notifTextPreview = Revealer({
         transition: 'slide_down',
         transitionDuration: userOptions.animations.durationSmall,
@@ -154,7 +155,7 @@ export default ({
             justify: Gtk.Justification.LEFT,
             maxWidthChars: 24,
             truncate: 'end',
-            label: notifObject.body.split("\n")[0],
+            label: body.split("\n")[0],
         }),
     });
     const notifTextExpanded = Revealer({
@@ -173,7 +174,7 @@ export default ({
                     justify: Gtk.Justification.LEFT,
                     maxWidthChars: 24,
                     wrap: true,
-                    label: notifObject.body,
+                    label: body,
                 }),
                 Box({
                     className: 'notif-actions spacing-h-5',
@@ -231,7 +232,7 @@ export default ({
         maxWidthChars: 24,
         truncate: 'end',
         ellipsize: 3,
-        useMarkup: notifObject.summary.startsWith('<'),
+        useMarkup: true,
         label: notifObject.summary,
     });
     const notifTextBody = Label({
