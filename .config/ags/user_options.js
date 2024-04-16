@@ -11,6 +11,9 @@ const userConfigOptions = {
             prevTab: "Ctrl+Page_Up",
         },
     },
+    'sidebar': {
+        'imageAllowNsfw': true,
+    }
     time: {
         // See https://docs.gtk.org/glib/method.DateTime.format.html
         // Here's the 12h format: "%I:%M%P"

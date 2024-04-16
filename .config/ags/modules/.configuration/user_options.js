@@ -10,6 +10,7 @@ let configOptions = {
         'enhancements': true,
         'useHistory': true,
         'writingCursor': " ...", // Warning: Using weird characters can mess up Markdown rendering
+        'proxyUrl': null, // Can be "socks5://127.0.0.1:9050" or "http://127.0.0.1:8080" for example. Leave it blank if you don't need it.
     },
     'animations': {
         'choreographyDelay': 35,
@@ -18,9 +19,16 @@ let configOptions = {
     },
     'appearance': {
         'keyboardUseFlag': false, // Use flag emoji instead of abbreviation letters
+        'layerSmoke': false,
+        'layerSmokeStrength': 0.2,
+        'fakeScreenRounding': true,
     },
     'apps': {
+        'bluetooth': "blueberry",
         'imageViewer': "loupe",
+        'network': "XDG_CURRENT_DESKTOP=\"gnome\" gnome-control-center wifi",
+        'settings': "XDG_CURRENT_DESKTOP=\"gnome\" gnome-control-center wifi",
+        'taskManager': "gnome-usage",
         'terminal': "foot", // This is only for shell actions
     },
     'battery': {
@@ -105,6 +113,10 @@ let configOptions = {
             'nextTab': "Ctrl+Page_Down",
             'prevTab': "Ctrl+Page_Up",
         },
+        'cheatsheet': {
+            'nextTab': "Page_Down",
+            'prevTab': "Page_Up",
+        }
     },
 }
 
