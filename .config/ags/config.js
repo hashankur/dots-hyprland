@@ -15,7 +15,7 @@ import {
 } from "./modules/bar/main.js";
 import Cheatsheet from "./modules/cheatsheet/main.js";
 // import DesktopBackground from './modules/desktopbackground/main.js';
-// import Dock from './modules/dock/main.js';
+import Dock from "./modules/dock/main.js";
 import Corner from "./modules/screencorners/main.js";
 import Indicator from "./modules/indicators/main.js";
 import Osk from "./modules/onscreenkeyboard/main.js";
@@ -53,15 +53,15 @@ applyStyle().catch(print);
 
 const Windows = () => [
   // forMonitors(DesktopBackground),
-  // Dock(),
+
   Overview(),
   forMonitors(Indicator),
   forMonitors(Cheatsheet),
   SideLeft(),
   SideRight(),
   forMonitors(Osk),
-  Session(),
-  // forMonitors(Bar),
+  forMonitors(Session),
+  ...(userOptions.dock.enabled ? [forMonitors(Dock)] : []),
   ...(userOptions.appearance.fakeScreenRounding
     ? [
         forMonitors((id) => Corner(id, "top left", true)),
